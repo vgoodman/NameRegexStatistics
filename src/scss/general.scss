@@ -1,0 +1,10 @@
+@import "colors";
+@import "standard";
+body {
+	font-family: "Open Sans", sans-serif;
+	background: $background-color;
+	#centered-content {
+@extend .center-items;
+@extend .horizontal-center;
+	}
+}
