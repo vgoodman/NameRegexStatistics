@@ -4,7 +4,7 @@ var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
 
 gulp.task('images', function () {
-  return gulp.src('src/images/**/*.{png,jpg,jpeg,gif,svg}')
+  return gulp.src('src/images/**/*.{png,jpg,jpeg,gif,svg,ico}')
     .pipe(imagemin({
       progressive: true,
       svgoPlugins: [{removeViewBox: false}],

@@ -7,8 +7,10 @@ var files = [
   "node_modules/backbone.marionette/node_modules/underscore/underscore.js",
   "node_modules/handlebars/dist/handlebars.js",
   "node_modules/jquery/dist/jquery.js",
+  "node_modules/d3/d3.js",
   "node_modules/backbone.marionette/node_modules/backbone/backbone.js",
   "node_modules/backbone.marionette/lib/backbone.marionette.js",
+  "node_modules/backbone-associations/backbone-associations.js",
   "node_modules/moment/moment.js"
 ];
 

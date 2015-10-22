@@ -1,6 +1,3 @@
-/**
- * Created by Verena on 6/18/15.
- */
 //Concatenate & Minify JS
  var gulp = require("gulp");
 var concat = require("gulp-concat");
@@ -17,42 +14,25 @@ var declare = require("gulp-declare");
 var defineModule = require("gulp-define-module");
 
 var fileList = [
-  "src/js/main/app.js",
-  "src/js/main/NRController.js",
-  "src/js/main/NRRouter.js",
-  "src/js/routes/baseController.js",
-  "src/js/routes/*.js",
-  "src/js/models/*.js"
+  "src/js/common/**/*.js"
 ];
 
-gulp.task("main", ["mainMin", "mainSass", "copyStart"]);
+gulp.task("common", ["commonMin"]);
 
-gulp.task("mainJs", function() {
+gulp.task("commonJs", function() {
   return gulp.src(fileList)
-    .pipe(concat("main.js"))
+    .pipe(concat("common.js"))
     .pipe(jsValidate())
-    .pipe(insert.append("\n//# sourceURL=main.js"))
+    .pipe(insert.append("\n//# sourceURL=common.js"))
     .pipe(insert.prepend('"use strict";'))
     .pipe(gulp.dest("public/js"))
     .on("error", gutil.log);
 });
 
-gulp.task("copyStart", function() {
-  return gulp.src(["src/js/startApp.js"])
-    .pipe(gulp.dest("public/js"));
-});
-
-gulp.task("mainMin", ["mainJs"], function() {
+gulp.task("commonMin", ["commonJs"], function() {
   return gulp.src(fileList)
-    .pipe(concat("main.js"))
+    .pipe(concat("common.js"))
     .pipe(uglify())
     .pipe(gulp.dest("public/js/min"))
     .on("error", gutil.log);
-});
-
-gulp.task("mainSass", function() {
-  return gulp.src(["src/scss/general.scss"])
-    .pipe(sass())
-    .pipe(minifycss())
-    .pipe(gulp.dest("public/css"));
 });

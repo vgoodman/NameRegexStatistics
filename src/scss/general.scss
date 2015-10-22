@@ -3,8 +3,62 @@
 body {
 	font-family: "Open Sans", sans-serif;
 	background: $background-color;
+	color: $text-color;
 	#centered-content {
-@extend .center-items;
-@extend .horizontal-center;
+		@extend .horizontal-center;
+		overflow: auto;
+		width: 500px;
+	}
+	.tooltip {
+		position: absolute;
+		z-index: 20;
+		color: $text-color;
+		background: $background-color;
+		display: inline;
+		text-align: center;
+		pointer-events: none;
+		cursor: crosshair;
+		width: 120px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	.input-field-wrapper {
+		.fa {
+			font-size: 15px;
+			cursor: pointer;
+			margin-top: 6px;
+			margin-right: 6px;
+			display: inline-block;
+			float: right;
+		}
+		margin: 10px;
+		height: 21px;
+		width: 187px;
+		padding: 3px 5px 5px 8px;
+		display: flex;
+		color: $background-color;
+		background-color: $text-color;
+		border-radius: 3px;
+		@include placeholder-color($highlight-color);
+		input {
+			color: $background-color;
+			background-color: $text-color;
+			box-shadow: none;
+			display: block;
+			float: none;
+			border: none;
+			margin: 0;
+			padding: 0;
+			height: 25px;
+		}
+		input:focus {
+    	outline: none;
+			color: $background-color;
+			background-color: $text-color;
+		}
+	}
+	table {
+		border: none;
+    border-spacing: 0;
 	}
 }

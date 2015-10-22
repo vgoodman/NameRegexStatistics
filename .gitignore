@@ -45,7 +45,7 @@ Temporary Items
 # =========================
 # Programming
 # =========================
-
+npm-debug.log
 node_modules
 public
 temp

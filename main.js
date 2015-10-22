@@ -12,6 +12,7 @@ if(appEnvironment !== 'local') {
   maxAge = 31536000000;
 }
 app.use(express.static(__dirname + '/public', { maxAge: maxAge }));
+app.use(express.static(__dirname + '/mockingData'));
 app.use(express.static(__dirname + '/tests'));
 // view engine setup
 app.set('views', path.join(__dirname, 'src/templates'));

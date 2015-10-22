@@ -1,5 +1,5 @@
 
- NR.module("Main.Controller", function (Controller, App, Backbone, Marionette, $, _) {
+NR.module("Main.Controller", function (Controller, App, Backbone, Marionette, $, _) {
   //This function allows me to have a separate controller for each module
   //It creates a controller for each module and ties it to its router
   NR.Main.addInitializer(function () {

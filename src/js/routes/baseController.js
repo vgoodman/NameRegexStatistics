@@ -5,9 +5,10 @@ NR.BaseController = Marionette.Controller.extend({
   loadScript: function(module, secondController) {
     var moduleName = module.toLowerCase();
     var success = _.bind(function() {
+      this.scriptFetched[this.script] = true;
       this.checkIfDone();
     }, this);
-    if(!this.scriptFetched[module]) {
+    if(!this.scriptFetched[this.script]) {
       var url = globals.js[moduleName]||"js/"+moduleName+".js";
       var error = _.bind(function() {
         var options = {

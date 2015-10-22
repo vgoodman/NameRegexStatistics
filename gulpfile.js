@@ -5,6 +5,7 @@ var files = [
   "analytics",
   "main",
   "revision",
+  "common",
   "images"
 ];
 var gulp = require("./gulp")(files);

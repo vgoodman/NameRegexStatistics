@@ -3,7 +3,8 @@
 var gulp = require("gulp");
 var files = [
 "analytics",
-"main"
+"main",
+"common"
 ];
 gulp.task("watch", function() {
 	for(var i=0; i<files.length; i++) {
