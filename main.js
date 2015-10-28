@@ -25,8 +25,11 @@ app.get('/*', function(req, res){
     environment: appEnvironment
   };
 
-  if (appEnvironment === 'local' || appEnvironment === 'testing') {
+  if (appEnvironment === 'local') {
     res.render('index-dev',globals);
+  }
+  else if (appEnvironment === 'test') {
+    res.render('index-test',globals);
   }
   //Add revisioned file paths for production
   else {
@@ -38,18 +41,18 @@ app.get('/*', function(req, res){
   }
   function removeDot(object) {
     var pathObject = {};
-      for (var property in object) {
-        pathObject[property.split('.')[0]] = "revisioned/" + object[property];
-      }
+    for (var property in object) {
+      pathObject[property.split('.')[0]] = "revisioned/" + object[property];
+    }
     return pathObject;
   }
 });
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-    var err = new Error('Not Found');
-    err.status = 404;
-    next(err);
+  var err = new Error('Not Found');
+  err.status = 404;
+  next(err);
 });
 
 // error handlers
@@ -57,23 +60,23 @@ app.use(function(req, res, next) {
 // development error handler
 // will print stacktrace
 if (appEnvironment === 'local') {
-    app.use(function(err, req, res, next) {
-        res.status(err.status || 500);
-        res.render('error', {
-            message: err.message,
-            error: err
-        });
+  app.use(function(err, req, res, next) {
+    res.status(err.status || 500);
+    res.render('error', {
+      message: err.message,
+      error: err
     });
+  });
 }
 
 // production error handler
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-        message: err.message,
-        error: {}
-    });
+  res.status(err.status || 500);
+  res.render('error', {
+    message: err.message,
+    error: {}
+  });
 });
 
 

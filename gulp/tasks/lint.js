@@ -1,6 +1,4 @@
-/**
- * Created by Verena on 7/21/14.
- */
+
 // Lint Task
 var gulp = require("gulp");
 var jshint = require("gulp-jshint");

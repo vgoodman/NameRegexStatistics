@@ -6,7 +6,8 @@ var files = [
   "main",
   "revision",
   "common",
-  "images"
+  "images",
+  "test"
 ];
 var gulp = require("./gulp")(files);
 // Default Task

@@ -8,11 +8,7 @@ NR.module("HelperFunctions", function (HelperFunctions, App, Backbone, Marionett
     });
   };
   HelperFunctions.sumArray = function(array) {
-    return array.reduce(
-      function(previous, current) {
-        return previous + parseInt(current);
-      }, 0
-    );
+    return _.reduce(array, function(previous, current){ return previous + parseInt(current, 10); }, 0);
   };
   HelperFunctions.capitalizeFirstLetter = function(string) {
     return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();

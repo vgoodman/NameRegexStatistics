@@ -1,6 +1,4 @@
-/**
- * Created by Verena on 6/18/15.
- */
+
 //Concatenate & Minify JS
  var gulp = require("gulp");
 var concat = require("gulp-concat");
